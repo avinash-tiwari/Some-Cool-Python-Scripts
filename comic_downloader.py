@@ -24,7 +24,7 @@ for i in range(1,pages+1):
     soup=BeautifulSoup(comic_content,"lxml")
     img=soup.find_all('img')[1].get('src')
     try:
-        name='image_'+i*'a'+'.'+img.split('.')[2]
+        name='image_'+int(i/2)*'a'+'.'+img.split('.')[2]
         f=open(name,'wb')
         r1=requests.get(img)
         f.write(r1.content)
